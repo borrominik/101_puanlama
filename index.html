@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>101 Oyunu Puanlama</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>101 Oyunu Puanlama</h1>
+    <div id="oyuncuGirisi">
+        <label for="oyuncu1">Oyuncu 1:</label>
+        <input type="text" id="oyuncu1" name="oyuncu1"><br>
+        <label for="oyuncu2">Oyuncu 2:</label>
+        <input type="text" id="oyuncu2" name="oyuncu2"><br>
+        <label for="oyuncu3">Oyuncu 3:</label>
+        <input type="text" id="oyuncu3" name="oyuncu3"><br>
+        <label for="oyuncu4">Oyuncu 4:</label>
+        <input type="text" id="oyuncu4" name="oyuncu4"><br>
+        <button onclick="oyuncuEkle()">Oyuncuları Ekle</button>
+    </div>
+    <div id="puanlama" style="display:none;">
+        <h2>Puanlama</h2>
+        <div id="oyuncuListesi"></div>
+        <button onclick="turuBitir()">Tur'u Bitir</button>
+        <button onclick="oyunuBitir()">Oyunu Bitir</button>
+        <div id="turSayisi" style="margin-top: 20px; font-weight: bold;">Toplam Tur: 0</div>
+    </div>
+    <div id="sonuc" style="display:none;">
+        <h2>Oyun Sonucu</h2>
+        <ul id="siralama"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

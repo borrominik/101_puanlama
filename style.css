@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+input, button {
+    margin: 5px;
+}
+#oyuncuListesi div {
+    margin-bottom: 10px;
+}
+#turSayisi {
+    margin-top: 20px;
+    font-weight: bold;
+}
