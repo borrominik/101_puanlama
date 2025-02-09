@@ -5,8 +5,20 @@ body {
 input, button {
     margin: 5px;
 }
+#oyuncuListesi {
+    display: grid;
+    grid-template-columns: auto 100px 150px; /* İsim, Puan Girişi, Toplam Puan için genişlikler */
+    gap: 10px; /* Elemanlar arası boşluk */
+    align-items: center; /* Elemanları dikeyde ortala */
+}
 #oyuncuListesi div {
-    margin-bottom: 10px;
+    display: contents; /* İçerikleri grid yapısına uydur */
+}
+#oyuncuListesi label {
+    text-align: left; /* İsimleri sola dayalı yap */
+}
+#oyuncuListesi input {
+    width: 100%; /* Puan giriş alanını tam genişlik yap */
 }
 #turSayisi {
     margin-top: 20px;
