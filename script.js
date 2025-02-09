@@ -24,11 +24,9 @@ function oyuncuListesiniGuncelle() {
     oyuncuListesi.innerHTML = '';
     oyuncular.forEach((oyuncu, index) => {
         oyuncuListesi.innerHTML += `
-            <div>
-                <label>${oyuncu.isim}:</label>
-                <input type="number" id="puan${index}" value="0">
-                <span>Toplam Puan: ${oyuncu.toplamPuan}</span>
-            </div>
+            <label>${oyuncu.isim}:</label>
+            <input type="number" id="puan${index}" value="0">
+            <span>Toplam Puan: ${oyuncu.toplamPuan}</span>
         `;
     });
     document.getElementById('turSayisi').innerText = `Toplam Tur: ${turSayisi}`;
