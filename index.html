@@ -8,15 +8,17 @@
 </head>
 <body>
     <h1>101 Oyunu Puanlama</h1>
-    <div id="oyuncuGirisi">
-        <label for="oyuncu1">Oyuncu 1:</label>
-        <input type="text" id="oyuncu1" name="oyuncu1" required><br>
-        <label for="oyuncu2">Oyuncu 2:</label>
-        <input type="text" id="oyuncu2" name="oyuncu2" required><br>
-        <label for="oyuncu3">Oyuncu 3:</label>
-        <input type="text" id="oyuncu3" name="oyuncu3" required><br>
-        <label for="oyuncu4">Oyuncu 4:</label>
-        <input type="text" id="oyuncu4" name="oyuncu4" required><br>
+    <div id="oyunTipiSecimi">
+        <label for="oyunTipi">Oyun Tipi:</label>
+        <select id="oyunTipi" onchange="oyunTipiniBelirle()">
+            <option value="esli">Eşli</option>
+            <option value="3oyunculu">3 Oyunculu</option>
+            <option value="4oyunculu">4 Oyunculu</option>
+        </select>
+        <button onclick="oyunTipiniSec()">Oyun Tipini Seç</button>
+    </div>
+    <div id="oyuncuGirisi" style="display:none;">
+        <div id="oyuncuAlanlari"></div>
         <button onclick="oyuncuEkle()">Oyuncuları Ekle</button>
     </div>
     <div id="puanlama" style="display:none;">
