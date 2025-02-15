@@ -33,7 +33,7 @@ input[type="text"], input[type="number"] {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    font-size: 16px;
+	font-size: 16px;
 }
 
 button {
@@ -64,3 +64,13 @@ span {
     margin-left: 10px;
     font-weight: bold;
 }
+
+@media (max-width: 600px) {
+    .oyuncu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .oyuncu-item span {
+        margin-top: 5px;
+    
