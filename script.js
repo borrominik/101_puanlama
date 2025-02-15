@@ -25,12 +25,13 @@ function oyuncuListesiniGuncelle() {
     oyuncular.forEach((oyuncu, index) => {
         oyuncuListesi.innerHTML += `
             <label>${oyuncu.isim}:</label>
-            <input type="number" id="puan${index}" value="0">
+            <input type="number" id="puan${index}" placeholder="Puan girin" value="">
             <span>Toplam Puan: ${oyuncu.toplamPuan}</span>
         `;
     });
     document.getElementById('turSayisi').innerText = `Toplam Tur: ${turSayisi}`;
 }
+
 
 function turuBitir() {
     oyuncular.forEach((oyuncu, index) => {
