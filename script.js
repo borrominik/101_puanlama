@@ -2,12 +2,14 @@ let oyuncular = [];
 let turSayisi = 0;
 let oyunTipi = '';
 
-function oyunTipiniSec() {
+ffunction oyunTipiniSec() {
+    console.log("Oyun tipi seçildi!");
     oyunTipi = document.getElementById('oyunTipi').value;
     document.getElementById('oyunTipiSecimi').style.display = 'none';
     document.getElementById('oyuncuGirisi').style.display = 'block';
     oyuncuAlanlariniGuncelle();
 }
+
 
 function oyuncuAlanlariniGuncelle() {
     const oyuncuAlanlari = document.getElementById('oyuncuAlanlari');
