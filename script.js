@@ -24,13 +24,16 @@ function oyuncuListesiniGuncelle() {
     oyuncuListesi.innerHTML = '';
     oyuncular.forEach((oyuncu, index) => {
         oyuncuListesi.innerHTML += `
-            <label>${oyuncu.isim}:</label>
-            <input type="number" id="puan${index}" placeholder="Puan girin" value="">
-            <span>Toplam Puan: ${oyuncu.toplamPuan}</span>
+            <div class="oyuncu-item">
+                <label>${oyuncu.isim}:</label>
+                <input type="number" id="puan${index}" placeholder="Puan girin" value="">
+                <span>Toplam Puan: ${oyuncu.toplamPuan}</span>
+            </div>
         `;
     });
     document.getElementById('turSayisi').innerText = `Toplam Tur: ${turSayisi}`;
 }
+
 
 
 function turuBitir() {
