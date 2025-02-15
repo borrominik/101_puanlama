@@ -1,18 +1,73 @@
 let oyuncular = [];
 let turSayisi = 0;
+let oyunTipi = '';
+
+function oyunTipiniSec() {
+    oyunTipi = document.getElementById('oyunTipi').value;
+    document.getElementById('oyunTipiSecimi').style.display = 'none';
+    document.getElementById('oyuncuGirisi').style.display = 'block';
+    oyuncuAlanlariniGuncelle();
+}
+
+function oyuncuAlanlariniGuncelle() {
+    const oyuncuAlanlari = document.getElementById('oyuncuAlanlari');
+    oyuncuAlanlari.innerHTML = '';
+    
+    if (oyunTipi === 'esli') {
+        oyuncuAlanlari.innerHTML += `
+            <label for="oyuncu1">Takım 1:</label>
+            <input type="text" id="oyuncu1" name="oyuncu1" required><br>
+            <label for="oyuncu2">Takım 2:</label>
+            <input type="text" id="oyuncu2" name="oyuncu2" required><br>
+        `;
+    } else if (oyunTipi === '3oyunculu') {
+        oyuncuAlanlari.innerHTML += `
+            <label for="oyuncu1">Oyuncu 1:</label>
+            <input type="text" id="oyuncu1" name="oyuncu1" required><br>
+            <label for="oyuncu2">Oyuncu 2:</label>
+            <input type="text" id="oyuncu2" name="oyuncu2" required><br>
+            <label for="oyuncu3">Oyuncu 3:</label>
+            <input type="text" id="oyuncu3" name="oyuncu3" required><br>
+        `;
+    } else if (oyunTipi === '4oyunculu') {
+        oyuncuAlanlari.innerHTML += `
+            <label for="oyuncu1">Oyuncu 1:</label>
+            <input type="text" id="oyuncu1" name="oyuncu1" required><br>
+            <label for="oyuncu2">Oyuncu 2:</label>
+            <input type="text" id="oyuncu2" name="oyuncu2" required><br>
+            <label for="oyuncu3">Oyuncu 3:</label>
+            <input type="text" id="oyuncu3" name="oyuncu3" required><br>
+            <label for="oyuncu4">Oyuncu 4:</label>
+            <input type="text" id="oyuncu4" name="oyuncu4" required><br>
+        `;
+    }
+}
 
 function oyuncuEkle() {
     const oyuncu1 = document.getElementById('oyuncu1').value;
     const oyuncu2 = document.getElementById('oyuncu2').value;
-    const oyuncu3 = document.getElementById('oyuncu3').value;
-    const oyuncu4 = document.getElementById('oyuncu4').value;
+    const oyuncu3 = document.getElementById('oyuncu3') ? document.getElementById('oyuncu3').value : '';
+    const oyuncu4 = document.getElementById('oyuncu4') ? document.getElementById('oyuncu4').value : '';
 
-    oyuncular = [
-        { isim: oyuncu1, toplamPuan: 0 },
-        { isim: oyuncu2, toplamPuan: 0 },
-        { isim: oyuncu3, toplamPuan: 0 },
-        { isim: oyuncu4, toplamPuan: 0 }
-    ];
+    if (oyunTipi === 'esli') {
+        oyuncular = [
+            { isim: oyuncu1, toplamPuan: 0 },
+            { isim: oyuncu2, toplamPuan: 0 }
+        ];
+    } else if (oyunTipi === '3oyunculu') {
+        oyuncular = [
+            { isim: oyuncu1, toplamPuan: 0 },
+            { isim: oyuncu2, toplamPuan: 0 },
+            { isim: oyuncu3, toplamPuan: 0 }
+        ];
+    } else if (oyunTipi === '4oyunculu') {
+        oyuncular = [
+            { isim: oyuncu1, toplamPuan: 0 },
+            { isim: oyuncu2, toplamPuan: 0 },
+            { isim: oyuncu3, toplamPuan: 0 },
+            { isim: oyuncu4, toplamPuan: 0 }
+        ];
+    }
 
     document.getElementById('oyuncuGirisi').style.display = 'none';
     document.getElementById('puanlama').style.display = 'block';
@@ -33,8 +88,6 @@ function oyuncuListesiniGuncelle() {
     });
     document.getElementById('turSayisi').innerText = `Toplam Tur: ${turSayisi}`;
 }
-
-
 
 function turuBitir() {
     oyuncular.forEach((oyuncu, index) => {
